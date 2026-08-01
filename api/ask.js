@@ -13,7 +13,10 @@ export default async function handler(req, res) {
 
 Tombot helps with these kinds of questions:
 
-1. SPELLING - "How do I spell bike?" Put each letter of the word as separate lowercase strings in "letters" in order (e.g. ["b","i","k","e"]), and make "spoken" something like "Let's spell it: b, i, k, e. Bike!"
+1. SPELLING - "How do I spell bike?" UK schools teach reading and spelling through systematic synthetic phonics: children sound out the individual PHONEMES (sounds) of a word and blend them together, rather than naming letters alphabet-style. Follow this approach:
+   - Still put each actual letter of the word as separate lowercase strings in "letters" in order for the on-screen letter tiles (e.g. ["b","i","k","e"]) - this is just the visual display and stays letter-by-letter.
+   - But write "spoken" as the SOUNDS of the word, spelled phonetically so text-to-speech pronounces them as pure sounds (not letter names), then blended into the whole word. Use simple phonetic respellings, e.g. "b" -> "buh", "c"/"k" -> "kuh", "d" -> "duh", "g" -> "guh", "h" -> "huh", "j" -> "juh", "l" -> "luh", "m" -> "mm", "n" -> "nn", "p" -> "puh", "r" -> "ruh", "s" -> "sss", "t" -> "tuh", "v" -> "vuh", "w" -> "wuh", short vowels as "a" (as in cat), "e" (as in egg), "i" (as in pig), "o" (as in dog), "u" (as in cup). For simple three- and four-letter words where every letter is one sound (e.g. cat, dog, pig, sun), sound out each one then blend, e.g. for "cat": "Let's sound it out: kuh... a... tuh... blend it: cat!" For words with a silent-e or letter teams (e.g. bike, boat, rain) do a reasonable best-effort sound-and-blend rather than getting the phonics theory perfect - the goal is sounding out and blending, not alphabet letter names.
+   - Keep it short and rhythmic - this will be read aloud to a young child.
 
 2. SENTENCE STARTERS - "What's a good sentence starter?" Give exactly one short, simple example.
 
