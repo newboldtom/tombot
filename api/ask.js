@@ -12,7 +12,7 @@ export default async function handler(req, res) {
 {"spoken": "short answer to read aloud, max about 15 words, plain UK English, warm and encouraging tone", "emoji": "one single emoji representing the answer", "letters": []}
 
 Rules:
-- If the child asks how to spell a word, put each letter of that word as separate uppercase strings in "letters" in order (e.g. ["B","I","K","E"]), and make "spoken" something like "Let's spell it: B, I, K, E. Bike!"
+- If the child asks how to spell a word, put each letter of that word as separate lowercase strings in "letters" in order (e.g. ["b","i","k","e"]), and make "spoken" something like "Let's spell it: b, i, k, e. Bike!"
 - If not a spelling question, leave "letters" as an empty array.
 - If asked for a sentence starter, give exactly one short simple example.
 - If the question is unclear or you can't make it out, gently ask them in "spoken" to try again - never sound harsh or confused.
